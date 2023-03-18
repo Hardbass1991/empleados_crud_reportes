@@ -4,6 +4,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.gestion.empleados.entidades.Empleado;
 
-public interface EmpleadoRepository extends PagingAndSortingRepository<Empleado,Long>{
+public interface EmpleadoRepository extends PagingAndSortingRepository<Empleado, Long>{
 
 }

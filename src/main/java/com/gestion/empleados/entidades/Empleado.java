@@ -1,103 +1,118 @@
 package com.gestion.empleados.entidades;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
-@Table(name = "empleado")
+@Table(name = "empleados")
 public class Empleado {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @NotEmpty
-    private String nombre;
-    @NotEmpty
-    private String apellido;
-    @NotEmpty
-    @Email
-    private String email;
-    @NotNull
-    private int telefono;
-    @NotEmpty
-    private String sexo;
-    @NotNull
-    private double salario;
-    @NotNull
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date fecha;
+	@NotEmpty
+	private String nombre;
 
-    public Empleado() {
-    }
+	@NotEmpty
+	private String apellido;
 
-    public Long getId() {
-        return id;
-    }
+	@NotEmpty
+	@Email
+	private String email;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	@NotNull
+	private int telefono;
 
-    public String getNombre() {
-        return nombre;
-    }
+	@NotEmpty
+	private String sexo;
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+	@NotNull
+	private double salario;
 
-    public String getApellido() {
-        return apellido;
-    }
+	@NotNull
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date fecha;
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+	public Empleado() {
+		super();
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public int getTelefono() {
-        return telefono;
-    }
+	public String getNombre() {
+		return nombre;
+	}
 
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-    public String getSexo() {
-        return sexo;
-    }
+	public String getApellido() {
+		return apellido;
+	}
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
 
-    public double getSalario() {
-        return salario;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public Date getFecha() {
-        return fecha;
-    }
+	public int getTelefono() {
+		return telefono;
+	}
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
+	public void setTelefono(int telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
 }
